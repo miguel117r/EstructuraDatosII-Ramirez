@@ -1,0 +1,42 @@
+=== RAÍZ E HIJOS ===
+Raíz: ¿Llueve?
+Hijo izquierdo: Quedarse en casa
+Hijo derecho: ¿Hay dinero?
+
+=== ÁRBOL COMPLETO ===
+RAÍZ -> ¿Llueve?
+   IZQ -> Quedarse en casa
+   DER -> ¿Hay dinero?
+      IZQ -> Ir al cine
+      DER -> ¿Hay tiempo libre?
+         IZQ -> Ir al parque
+         DER -> Caminar 15 minutos
+
+=== PROPIEDADES ===
+Nodos: 7
+Hojas: 4
+Altura (en aristas): 3
+Grado de la raíz: 2
+
+=== CLASIFICACIÓN ===
+¿Lleno?      true
+¿Completo?   false
+¿Perfecto?   false
+¿Degenerado? false
+
+=== CONTROL DE NULL ===
+¿'Ir al cine' es hoja? true
+Hijo izquierdo de 'Ir al cine': null
+'Ir al cine' no tiene hijo izquierdo: la referencia es null.
+
+=== PRUEBA: QUITAR UN ENLACE ===
+Nodos enlazados a la raíz: 4
+Hojas: 2
+¿'¿Hay dinero?' es hoja? false
+Grado de '¿Hay dinero?': 1
+¿Sigue siendo lleno? false
+
+=== ÁRBOL VACÍO ===
+El árbol está vacío (la raíz es null).
+Nodos: 0
+Altura: -1

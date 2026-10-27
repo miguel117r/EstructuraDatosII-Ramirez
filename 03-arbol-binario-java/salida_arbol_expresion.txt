@@ -1,0 +1,14 @@
+=== ÁRBOL DE EXPRESIÓN ===
+RAÍZ -> +
+   IZQ -> *
+      IZQ -> -
+         IZQ -> 8
+         DER -> 2
+      DER -> 4
+   DER -> /
+      IZQ -> 6
+      DER -> 3
+
+Nodos: 9 | Hojas (operandos): 5 | Altura: 3
+
+Resultado de (8 - 2) * 4 + 6 / 3 = 26
