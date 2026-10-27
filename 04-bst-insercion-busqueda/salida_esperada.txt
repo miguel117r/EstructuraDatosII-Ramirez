@@ -1,0 +1,82 @@
+=== EJERCICIO: 50, 30, 70, 20, 40, 60, 80 ===
+Árbol (lateral, derecha arriba):
+            80
+      70
+            60
+50
+            40
+      30
+            20
+
+Inorden: [20, 30, 40, 50, 60, 70, 80]
+Altura: 2 | Nodos: 7
+
+Búsqueda de un valor existente y uno inexistente:
+Buscar 60 -> ENCONTRADO | comparaciones: 3 | camino: 50 -> 70 -> 60
+Buscar 65 -> NO existe | comparaciones: 3 | camino: 50 -> 70 -> 60 -> null
+buscar(60) = true | buscar(65) = false
+
+=== 15 CÓDIGOS EN ORDEN ALEATORIO ===
+Orden de inserción: [4521, 2308, 6745, 1190, 3876, 8012, 5467, 2951, 7230, 1604, 9183, 4017, 6392, 3145, 8750]
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+
+Buscar 1190 -> ENCONTRADO | comparaciones: 3 | camino: 4521 -> 2308 -> 1190
+Buscar 6392 -> ENCONTRADO | comparaciones: 4 | camino: 4521 -> 6745 -> 5467 -> 6392
+Buscar 8750 -> ENCONTRADO | comparaciones: 5 | camino: 4521 -> 6745 -> 8012 -> 9183 -> 8750
+Buscar 5000 -> NO existe | comparaciones: 3 | camino: 4521 -> 6745 -> 5467 -> null
+Buscar 9999 -> NO existe | comparaciones: 4 | camino: 4521 -> 6745 -> 8012 -> 9183 -> null
+Total de comparaciones: 19
+
+=== LOS MISMOS 15 CÓDIGOS, YA ORDENADOS ===
+Orden de inserción: [1190, 1604, 2308, 2951, 3145, 3876, 4017, 4521, 5467, 6392, 6745, 7230, 8012, 8750, 9183]
+                                                                                    9183
+                                                                              8750
+                                                                        8012
+                                                                  7230
+                                                            6745
+                                                      6392
+                                                5467
+                                          4521
+                                    4017
+                              3876
+                        3145
+                  2951
+            2308
+      1604
+1190
+
+Buscar 1190 -> ENCONTRADO | comparaciones: 1 | camino: 1190
+Buscar 6392 -> ENCONTRADO | comparaciones: 10 | camino: 1190 -> 1604 -> 2308 -> 2951 -> 3145 -> 3876 -> 4017 -> 4521 -> 5467 -> 6392
+Buscar 8750 -> ENCONTRADO | comparaciones: 14 | camino: 1190 -> 1604 -> 2308 -> 2951 -> 3145 -> 3876 -> 4017 -> 4521 -> 5467 -> 6392 -> 6745 -> 7230 -> 8012 -> 8750
+Buscar 5000 -> NO existe | comparaciones: 9 | camino: 1190 -> 1604 -> 2308 -> 2951 -> 3145 -> 3876 -> 4017 -> 4521 -> 5467 -> null
+Buscar 9999 -> NO existe | comparaciones: 15 | camino: 1190 -> 1604 -> 2308 -> 2951 -> 3145 -> 3876 -> 4017 -> 4521 -> 5467 -> 6392 -> 6745 -> 7230 -> 8012 -> 8750 -> 9183 -> null
+Total de comparaciones: 49
+
+=== TABLA COMPARATIVA (15 códigos, 5 búsquedas) ===
+Escenario           Nodos   Altura  Comparaciones   Promedio
+Aleatorio              15        4             19       3.80
+Ordenado               15       14             49       9.80
+
+(Tabla guardada en comparacion_bst.csv)
+
+=== EXPERIMENTO CON 1000 CLAVES (se busca cada clave una vez) ===
+Escenario            Altura  Comparaciones (prom.)
+Aleatorio                26                  13.40
+Ordenado                999                 500.50
+Referencias: log2(1000) = 9.97 | (n + 1) / 2 = 500.50
+
+Conclusión: con datos ordenados el BST se degenera en una lista, su altura llega a n - 1 y buscar pasa de ~O(log n) a O(n).

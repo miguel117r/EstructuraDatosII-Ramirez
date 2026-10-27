@@ -1,0 +1,3 @@
+Escenario,Nodos,Altura (aristas),Comparaciones totales,Promedio en 5 busquedas
+Aleatorio,15,4,19,3.80
+Ordenado,15,14,49,9.80
