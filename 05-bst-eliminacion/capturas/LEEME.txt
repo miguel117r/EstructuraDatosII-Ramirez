@@ -1,0 +1,2 @@
+Guarda aquí tu captura de pantalla de la ejecución con el nombre ejecucion.png
+(el README ya apunta a ese archivo). Después puedes borrar este LEEME.txt.

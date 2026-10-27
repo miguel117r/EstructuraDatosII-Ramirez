@@ -1,0 +1,316 @@
+
+========================================================
+ÁRBOL BASE (el BST de la Guía 4)
+========================================================
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+
+Inorden:  [1190, 1604, 2308, 2951, 3145, 3876, 4017, 4521, 5467, 6392, 6745, 7230, 8012, 8750, 9183]
+Preorden: [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+Nodos: 15 | Altura: 4
+[OK]    el árbol base es un BST válido
+
+========================================================
+CASO 1: ELIMINAR UNA HOJA (3145)
+========================================================
+ANTES:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Preorden antes:  [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+Referencia ANTES: hijo derecho de 2951 = 3145
+
+DESPUÉS:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                  2951
+      2308
+                  1604
+            1190
+Inorden después:  [1190, 1604, 2308, 2951, 3876, 4017, 4521, 5467, 6392, 6745, 7230, 8012, 8750, 9183]
+Preorden después: [4521, 2308, 1190, 1604, 3876, 2951, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+Referencia DESPUÉS: hijo derecho de 2951 = null
+[OK]    3145 ya no existe
+[OK]    el padre 2951 quedó con referencia derecha null
+[OK]    quedan 14 nodos
+[OK]    el árbol sigue siendo un BST válido
+
+========================================================
+CASO 2a: NODO CON UN HIJO DERECHO (5467, hijo: 6392)
+========================================================
+ANTES:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Preorden antes:  [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+Referencia ANTES: hijo izquierdo de 6745 = 5467
+
+DESPUÉS:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+            6392
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Inorden después:  [1190, 1604, 2308, 2951, 3145, 3876, 4017, 4521, 6392, 6745, 7230, 8012, 8750, 9183]
+Preorden después: [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 6392, 8012, 7230, 9183, 8750]
+
+Referencia DESPUÉS: hijo izquierdo de 6745 = 6392
+[OK]    5467 ya no existe
+[OK]    6392 sigue existiendo
+[OK]    6745 ahora apunta directo a 6392
+[OK]    quedan 14 nodos
+[OK]    el árbol sigue siendo un BST válido
+
+========================================================
+CASO 2b: NODO CON UN HIJO IZQUIERDO (9183, hijo: 8750)
+========================================================
+ANTES:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Preorden antes:  [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+Referencia ANTES: hijo derecho de 8012 = 9183
+
+DESPUÉS:
+                  8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Inorden después:  [1190, 1604, 2308, 2951, 3145, 3876, 4017, 4521, 5467, 6392, 6745, 7230, 8012, 8750]
+Preorden después: [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 8750]
+
+Referencia DESPUÉS: hijo derecho de 8012 = 8750
+[OK]    9183 ya no existe
+[OK]    8012 ahora apunta directo a 8750
+[OK]    el árbol sigue siendo un BST válido
+
+========================================================
+CASO 3: NODO CON DOS HIJOS (2308), CON SUCESOR INORDEN
+========================================================
+ANTES:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Preorden antes:  [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+Sucesor inorden de 2308 (mínimo del subárbol derecho): 2951
+Antecesor inorden de 2308 (máximo del subárbol izquierdo): 1604
+Hijo izquierdo de 3876 ANTES = 2951
+
+DESPUÉS:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                  3145
+      2951
+                  1604
+            1190
+Inorden después:  [1190, 1604, 2951, 3145, 3876, 4017, 4521, 5467, 6392, 6745, 7230, 8012, 8750, 9183]
+Preorden después: [4521, 2951, 1190, 1604, 3876, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+El nodo que era 2308 ahora guarda: 2951 (hijos: izq=1190, der=3876)
+Hijo izquierdo de 3876 DESPUÉS = 3145
+[OK]    2308 ya no existe
+[OK]    el nodo ahora guarda el sucesor 2951
+[OK]    el sucesor no quedó duplicado
+[OK]    3876 heredó el hijo 3145 del sucesor
+[OK]    quedan 14 nodos
+[OK]    el árbol sigue siendo un BST válido
+
+========================================================
+CASO 3 (variante): MISMO NODO 2308, CON ANTECESOR INORDEN
+========================================================
+Hijo derecho de 1190 ANTES = 1604
+
+DESPUÉS:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      1604
+            1190
+Inorden después:  [1190, 1604, 2951, 3145, 3876, 4017, 4521, 5467, 6392, 6745, 7230, 8012, 8750, 9183]
+Preorden después: [4521, 1604, 1190, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+El nodo que era 2308 ahora guarda: 1604
+Hijo derecho de 1190 DESPUÉS = null
+[OK]    el nodo ahora guarda el antecesor 1604
+[OK]    1190 quedó sin hijo derecho
+[OK]    el árbol sigue siendo un BST válido
+
+========================================================
+EJERCICIO: ELIMINAR LA RAÍZ (4521)
+========================================================
+ANTES:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+                  6392
+            5467
+4521
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Preorden antes:  [4521, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 5467, 6392, 8012, 7230, 9183, 8750]
+
+Sucesor inorden de la raíz: 5467
+
+DESPUÉS:
+                  9183
+                        8750
+            8012
+                  7230
+      6745
+            6392
+5467
+                  4017
+            3876
+                        3145
+                  2951
+      2308
+                  1604
+            1190
+Inorden después:  [1190, 1604, 2308, 2951, 3145, 3876, 4017, 5467, 6392, 6745, 7230, 8012, 8750, 9183]
+Preorden después: [5467, 2308, 1190, 1604, 3876, 2951, 3145, 4017, 6745, 6392, 8012, 7230, 9183, 8750]
+
+Nueva raíz: 5467 | Hijo izquierdo de 6745 ahora = 6392
+[OK]    4521 ya no existe
+[OK]    la nueva raíz es el sucesor 5467
+[OK]    6745 ahora apunta a 6392
+[OK]    el inorden sigue ordenado
+[OK]    el árbol sigue siendo un BST válido
+
+Raíz eliminada con ANTECESOR -> nueva raíz: 4017
+[OK]    con antecesor la nueva raíz es 4017
+[OK]    con antecesor el árbol también es un BST válido
+
+========================================================
+PRUEBAS ADICIONALES
+========================================================
+[OK]    eliminar un valor inexistente no cambia el árbol
+[OK]    eliminar en un árbol vacío no falla
+[OK]    eliminar los 15 códigos uno por uno deja el árbol vacío y válido
+[OK]    eliminar el único nodo deja el árbol vacío
+[OK]    1000 claves, 500 eliminadas al azar: quedan 500
+[OK]    ... el árbol sigue siendo un BST válido
+[OK]    ... el inorden coincide exactamente con las claves restantes
+
+========================================================
+RESUMEN
+========================================================
+Pruebas ejecutadas: 36
+Pruebas superadas:  36
+Pruebas fallidas:   0
